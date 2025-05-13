@@ -1,0 +1,15 @@
+{
+  "name": "webdev-nodejs-cardgame",
+  "version": "1.0.0",
+  "description": "A Node.js card game project.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "author": "Jacob Christensen",
+  "license": "ISC"
+}

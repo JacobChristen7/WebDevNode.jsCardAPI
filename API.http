@@ -1,0 +1,13 @@
+# Test the /getToken endpoint
+POST http://localhost:2005/getToken
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "passwood1"
+}
+
+###
+
+# Test the /cards endpoint
+GET http://localhost:2005/cards

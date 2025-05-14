@@ -1,4 +1,4 @@
-# Test the /getToken endpoint
+# Get a JWT token
 POST http://localhost:2005/getToken
 Content-Type: application/json
 
@@ -9,5 +9,47 @@ Content-Type: application/json
 
 ###
 
-# Test the /cards endpoint
+# Get all cards
 GET http://localhost:2005/cards
+
+###
+
+# Get cards filtered by set and rarity
+// GET http://localhost:2005/cards?set=Base%20Set&rarity=Common
+GET http://localhost:2005/cards?rarity=Epic
+
+###
+
+# Create a new card
+POST http://localhost:2005/cards/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwiaWF0IjoxNzQ3MTkwMjc5LCJleHAiOjE3NDcxOTM4Nzl9.VbjU_4N9AQWikzOk5JJW0TGHm3pxIzBd0lWgpg70Xb8
+
+{
+  "id": 128,
+  "name": "Earth Elemental",
+  "set": "Base Set",
+  "type": "Creature",
+  "rarity": "Uncommon",
+  "power": 5000,
+  "toughness": 4500,
+  "cost": 4
+}
+
+###
+
+# Update a card
+PUT http://localhost:2005/cards/128
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwiaWF0IjoxNzQ3MTkwMjc5LCJleHAiOjE3NDcxOTM4Nzl9.VbjU_4N9AQWikzOk5JJW0TGHm3pxIzBd0lWgpg70Xb8
+
+{
+  "name": "Fireball Magnum",
+  "rarity": "Rare"
+}
+
+###
+
+# Delete a card
+DELETE http://localhost:2005/cards/128
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwiaWF0IjoxNzQ3MTkwMjc5LCJleHAiOjE3NDcxOTM4Nzl9.VbjU_4N9AQWikzOk5JJW0TGHm3pxIzBd0lWgpg70Xb8
